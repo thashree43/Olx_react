@@ -2,18 +2,25 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../Components/Navbar'
 import  {userAuth} from '../Context/firebasecontext.jsx'
+import {signUpValidate} from '../Utilities/signup.js'
 
 function Signup() {
     const [username,setUsername] = useState('')
     const [mobile,setMobile] = useState('')
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+    const [error,setError] =useState('')
     const navigate = useNavigate()
 
     const {signup}=userAuth()
 
     const handleSubmit = async(e)=>{
         e.preventDefault()
+        const validationError  = signUpValidate(username,mobile,email,password)
+        if (validationError ) {
+          setError(validationError )
+          return ;
+        }
         try {
             await signup(email,password,username,mobile)
             navigate("/login")
@@ -64,6 +71,7 @@ function Signup() {
                   autoComplete='current-password'
                   className='p-3 bg-white rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
                 />
+                <p className='pt-6 text-center text-red-600'>{error}</p>
                 <button type='submit' className='bg-black py-3 rounded font-bold text-white hover:bg-gray-800 transition duration-300'>
                   Create
                 </button>

@@ -5,6 +5,7 @@ import { collection,addDoc } from "firebase/firestore";
 import {ref,getDownloadURL,uploadBytes} from "firebase/storage"
 import olxLogo from '../assets/olx-logo.svg';
 import { useNavigate } from 'react-router-dom';
+import {sellProductValidate} from '../Utilities/sellproduct'
 
 
 function Sellproduct() {
@@ -16,8 +17,15 @@ function Sellproduct() {
     const [image,setImage] = useState(null)
     const [error,setError] = useState('')
     const navigate = useNavigate()
+
+
     const handlesubmit =async (e)=>{
         e.preventDefault()
+    const validationError = sellProductValidate(name,category,price,location)
+    if (validationError ) {
+      setError(validationError )
+      return
+    }
         setLoading(true)
         setError('')
 
@@ -139,6 +147,7 @@ function Sellproduct() {
           </div>
           <p className=" text-red-600">{}</p>
           <div className="p-4">
+          <p className='pt-6 text-center  text-red-600'>{error}</p>
             <button
             type='submit'
               className="btn-submit py-2  px-4 bg-black text-white font-bold text-lg rounded-md"

@@ -3,15 +3,21 @@ import { Link, useNavigate } from 'react-router-dom'
 import olxLogo from '../assets/olx-logo.svg';
 import Navbar from '../Components/Navbar';
 import {userAuth} from '../Context/firebasecontext'
-
-
+import {loginUpValidate} from '../Utilities/login'
+ 
 function Log() {
    const [email,setEmail] = useState('')
    const [password,setPassword] = useState('')
+   const [error,setError] = useState('')
    const navigate = useNavigate()
    const {login} = userAuth()
   const handlesubmit =async (e)=>{
     e.preventDefault()
+    const validationError  = loginUpValidate(email,password)
+    if (validationError ) {
+      setError(validationError )
+      return 
+    }
     try {
       await login(email,password)
       navigate("/")
@@ -50,6 +56,7 @@ function Log() {
                 autoComplete='current-password'
                 className='p-3 my-2  rounded border border-black'
               />
+                 <p className='pt-6 text-center text-red-600'>{error}</p>
               <button type='submit' className='bg-black py-3 my-6 rounded font-nsans-bold text-white '>Login</button>
              
               <p className='py-8 text-center'>
