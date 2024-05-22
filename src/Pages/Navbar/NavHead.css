@@ -1,0 +1,125 @@
+.headerParentDiv {
+    padding: 10px 16px;
+    background-color: whitesmoke;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .headerChildDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .placeSearch {
+    width: 17em;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    border: 2px solid #002f34;
+    border-radius: 4px;
+    background-color: white;
+  }
+  
+  .placeSearch::selection {
+    border-color: rgb(21 55 33);
+    outline-color: rgb(21 55 33)
+  }
+  
+  .placeSearch input {
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  
+  .productSearch {
+    width: 35em;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 2px solid #002f34;
+    border-radius: 4px;
+  }
+  
+  .productSearch .input {
+    width: calc(100% - 48px);
+    height: 100%;
+    display: flex;
+  }
+  
+  .productSearch .input input {
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  
+  .productSearch .searchAction {
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #002f34;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .productSearch .searchAction svg {
+    fill: white;
+  }
+  
+  .language {
+    height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .language span {
+    font-size: 15px;
+    font-weight: bolder;
+    margin-right: 5px;
+  }
+  
+  .loginPage span {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-right: 5px;
+  }
+  
+  .loginPage hr {
+    margin: 0;
+    background-color: black;
+    height: 2px;
+  }
+  
+  .sellMenu {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .sellMenu .sellMenuContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #002f34;
+  }
+  
+  .sellMenu .sellMenuContent span {
+    margin-left: 5px;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .placeSearch,
+    .productSearch {
+      display: none;
+    }
+  }
+  
