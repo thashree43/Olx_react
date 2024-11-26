@@ -3,22 +3,15 @@ import {getAuth} from 'firebase/auth'
 import {getFirestore} from 'firebase/firestore'
 import {getStorage} from 'firebase/storage' 
 
-const {
-  VITE_FIREBASE_API_KEY,
-VITE_FIREBASE_AUTH_DOMAIN,
-VITE_FIREBASE_PROJECT_ID,
-VITE_FIREBASE_STORAGE_BUCKET,
-VITE_FIREBASE_MESSAGING_SENDERID,
-VITE_FIREBASE_API_ID 
-}=import.meta.env
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: VITE_FIREBASE_API_KEY,
-  authDomain: VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: VITE_FIREBASE_PROJECT_ID,
-  storageBucket: VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: VITE_FIREBASE_MESSAGING_SENDERID,
-  appId: VITE_FIREBASE_API_ID 
+  apiKey: "AIzaSyBEXNaGKzkoEp5HoISYEwXJ4hC0lMeq_gw",
+  authDomain: "reacty-olx-yt.firebaseapp.com",
+  projectId: "reacty-olx-yt",
+  storageBucket: "reacty-olx-yt.appspot.com",
+  messagingSenderId: "85835333600",
+  appId: "1:85835333600:web:fed17ae3c5d636bcca3585"
 };
 
 // Initialize Firebase

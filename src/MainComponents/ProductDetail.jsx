@@ -14,9 +14,13 @@ function ProductDetail({selected}) {
       if (productdetails?.userId) {
         const q = query(collection(db, "users"), where("id", "==", productdetails.userId));
         const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-          setUserDetails(doc.data());
-        });
+        if (!querySnapshot.empty) {
+          querySnapshot.forEach((doc) => {
+            setUserDetails(doc.data());
+          });
+        } else {
+          console.error('No matching user found');
+        }
       }
     };
   

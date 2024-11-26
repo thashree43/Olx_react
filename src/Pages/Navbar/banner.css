@@ -1,0 +1,38 @@
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Add a background color if needed */
+  }
+  
+  .banner-image {
+    width: auto; /* Maintain aspect ratio */
+    height: 80%; /* Adjust height as needed */
+    object-fit: contain; /* Ensure the image fits within the given dimensions */
+  }
+  
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .banner-text h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Adjust font size as needed */
+  }
+  
+  .banner-text p {
+    margin: 0;
+    font-size: 1.2rem; /* Adjust font size as needed */
+  }
+  

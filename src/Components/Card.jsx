@@ -26,7 +26,7 @@ function Card({ product }) {
           <FaHeart className="text-black-500 cursor-pointer" />
         </div>
         <p className="text-gray-700 text-base">Category: {product.category}</p>
-        <p className="text-gray-700 text-base">Price: ${product.price}</p>
+        <p className="text-gray-700 text-base">Price: ₹{product.price}/-</p>
         <p className="text-gray-700 text-base">Location: {product.location}</p>
         <p className="text-gray-700 text-base">Date: {product.createdAt}</p>
       </div>
